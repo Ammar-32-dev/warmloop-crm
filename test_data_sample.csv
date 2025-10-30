@@ -1,0 +1,11 @@
+name,email,company,score,status,source,estimated_value,activities_last_30d
+Alice Smith,alice@example.com,TechCorp,90,qualified,referral,15000,5
+Bob Johnson,bob@example.com,DataInc,75,contacted,web,8000,3
+Charlie Davis,charlie@example.com,CloudSys,85,qualified,referral,12000,4
+Diana Wilson,diana@example.com,DevOps Co,60,new,ad,5000,1
+Eve Martinez,eve@example.com,AI Solutions,95,won,referral,20000,8
+Frank Brown,frank@example.com,StartupX,45,contacted,web,3000,2
+Grace Lee,grace@example.com,Enterprise Ltd,80,qualified,referral,10000,4
+Henry Taylor,henry@example.com,TechStart,55,new,social,4000,1
+Ivy Anderson,ivy@example.com,Innovate Inc,70,contacted,web,7000,3
+Jack Thomas,jack@example.com,Future Tech,88,qualified,referral,14000,5

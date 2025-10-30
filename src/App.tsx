@@ -7,6 +7,8 @@ import { AuthPage } from './pages/AuthPage';
 import { DashboardPage } from './pages/DashboardPage';
 import { LeadsPage } from './pages/LeadsPage';
 import { AnalyticsPage } from './pages/AnalyticsPage';
+import { DatasetsPage } from './pages/DatasetsPage';
+import { DatasetDetailPage } from './pages/DatasetDetailPage';
 
 function App() {
   return (
@@ -36,6 +38,22 @@ function App() {
             element={
               <ProtectedRoute>
                 <AnalyticsPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/datasets"
+            element={
+              <ProtectedRoute>
+                <DatasetsPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/datasets/:id"
+            element={
+              <ProtectedRoute>
+                <DatasetDetailPage />
               </ProtectedRoute>
             }
           />

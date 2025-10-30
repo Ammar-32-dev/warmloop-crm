@@ -7,9 +7,16 @@ A lightweight, modern CRM web application built with React, TypeScript, Tailwind
 - **Landing Page**: Modern, responsive design with clear value proposition
 - **Authentication System**: Secure email-based login/signup with Supabase Auth
 - **Dashboard**: Key metrics and KPIs at a glance (Total Leads, Average Score, Lead Distribution)
-- **Lead Management**: Full CRUD operations for managing contacts and prospects
+- **Lead Management**: Full CRUD operations for managing contacts and prospects with automatic scoring
 - **Analytics**: Visual insights with charts showing pipeline distribution and top leads
+- **Data Import**: Upload and analyze CSV, Excel, JSON, or SQL INSERT files
+- **Auto-Generated Dashboards**: Automatic chart generation and data quality insights for imported datasets
+- **AI Insights**: Rule-based recommendations for high-value leads and at-risk pipelines
 - **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
+
+## Live Demo
+
+🚀 **Production URL**: [https://3338a47fearh.space.minimax.io](https://3338a47fearh.space.minimax.io)
 
 ## Tech Stack
 
@@ -18,6 +25,7 @@ A lightweight, modern CRM web application built with React, TypeScript, Tailwind
 - **Backend**: Supabase (Database, Authentication, RLS)
 - **Routing**: React Router v6
 - **Charts**: Chart.js + react-chartjs-2
+- **File Parsing**: PapaParse (CSV), SheetJS (Excel)
 - **Icons**: Lucide React
 
 ## Design

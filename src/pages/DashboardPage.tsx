@@ -3,7 +3,8 @@ import { DashboardLayout } from '../components/DashboardLayout';
 import { leadsService } from '../services/leadsService';
 import { AIInsights } from '../components/AIInsights';
 import { TopLeads } from '../components/TopLeads';
-import { Users, TrendingUp, Target } from 'lucide-react';
+import { DataImportModal } from '../components/DataImportModal';
+import { Users, TrendingUp, Target, Upload } from 'lucide-react';
 
 interface Stats {
   totalLeads: number;
@@ -14,6 +15,7 @@ interface Stats {
 export const DashboardPage: React.FC = () => {
   const [stats, setStats] = useState<Stats | null>(null);
   const [loading, setLoading] = useState(true);
+  const [showImportModal, setShowImportModal] = useState(false);
 
   useEffect(() => {
     loadStats();
@@ -44,13 +46,22 @@ export const DashboardPage: React.FC = () => {
     <DashboardLayout>
       <div className="space-y-8">
         {/* Header */}
-        <div>
-          <h1 className="text-3xl font-bold text-gray-900" style={{ fontFamily: 'Poppins, sans-serif' }}>
-            Dashboard
-          </h1>
-          <p className="text-gray-600 mt-2" style={{ fontFamily: 'Inter, sans-serif' }}>
-            Overview of your CRM performance
-          </p>
+        <div className="flex items-center justify-between">
+          <div>
+            <h1 className="text-3xl font-bold text-gray-900" style={{ fontFamily: 'Poppins, sans-serif' }}>
+              Dashboard
+            </h1>
+            <p className="text-gray-600 mt-2" style={{ fontFamily: 'Inter, sans-serif' }}>
+              Overview of your CRM performance
+            </p>
+          </div>
+          <button
+            onClick={() => setShowImportModal(true)}
+            className="flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-indigo-600 to-sky-400 text-white rounded-xl hover:from-indigo-700 hover:to-sky-500 transition-all duration-200 font-semibold shadow-lg hover:shadow-xl"
+          >
+            <Upload className="w-5 h-5" />
+            <span>Import Data</span>
+          </button>
         </div>
 
         {/* KPI Cards */}
@@ -170,6 +181,12 @@ export const DashboardPage: React.FC = () => {
           </div>
         )}
       </div>
+
+      {/* Import Data Modal */}
+      <DataImportModal
+        isOpen={showImportModal}
+        onClose={() => setShowImportModal(false)}
+      />
     </DashboardLayout>
   );
 };

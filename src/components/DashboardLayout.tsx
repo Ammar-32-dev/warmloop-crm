@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { LayoutDashboard, Users, BarChart3, LogOut } from 'lucide-react';
+import { LayoutDashboard, Users, BarChart3, Database, LogOut } from 'lucide-react';
 
 export const DashboardLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { signOut } = useAuth();
@@ -20,6 +20,7 @@ export const DashboardLayout: React.FC<{ children: React.ReactNode }> = ({ child
     { to: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
     { to: '/leads', icon: Users, label: 'Leads' },
     { to: '/analytics', icon: BarChart3, label: 'Analytics' },
+    { to: '/datasets', icon: Database, label: 'Datasets' },
   ];
 
   return (
