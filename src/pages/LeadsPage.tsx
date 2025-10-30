@@ -13,7 +13,6 @@ export const LeadsPage: React.FC = () => {
     name: '',
     email: '',
     company: '',
-    score: 0,
     status: 'new',
     source: '',
     estimated_value: 0,
@@ -42,7 +41,6 @@ export const LeadsPage: React.FC = () => {
         name: lead.name,
         email: lead.email,
         company: lead.company || '',
-        score: lead.score,
         status: lead.status,
         source: lead.source || '',
         estimated_value: lead.estimated_value || 0,
@@ -54,7 +52,6 @@ export const LeadsPage: React.FC = () => {
         name: '',
         email: '',
         company: '',
-        score: 0,
         status: 'new',
         source: '',
         estimated_value: 0,
@@ -281,16 +278,10 @@ export const LeadsPage: React.FC = () => {
                 />
               </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Score (0-100)</label>
-                <input
-                  type="number"
-                  value={formData.score}
-                  onChange={(e) => setFormData({ ...formData, score: parseInt(e.target.value) || 0 })}
-                  min="0"
-                  max="100"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                />
+              <div className="bg-indigo-50 p-4 rounded-lg border border-indigo-200">
+                <p className="text-sm text-indigo-700">
+                  <strong>Note:</strong> Score is automatically calculated based on source, estimated value, and activity level.
+                </p>
               </div>
 
               <div>

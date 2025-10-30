@@ -29,9 +29,9 @@ export const DashboardLayout: React.FC<{ children: React.ReactNode }> = ({ child
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-8">
-              <h1 className="text-2xl font-bold text-indigo-600" style={{ fontFamily: 'Poppins, sans-serif' }}>
+              <NavLink to="/dashboard" className="text-2xl font-bold text-indigo-600 hover:text-indigo-700 transition-colors duration-200 cursor-pointer" style={{ fontFamily: 'Poppins, sans-serif' }}>
                 WarmLoop
-              </h1>
+              </NavLink>
               <div className="hidden md:flex space-x-1">
                 {navItems.map((item) => (
                   <NavLink
