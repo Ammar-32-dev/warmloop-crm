@@ -14,10 +14,6 @@ A lightweight, modern CRM web application built with React, TypeScript, Tailwind
 - **AI Insights**: Rule-based recommendations for high-value leads and at-risk pipelines
 - **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
 
-## Live Demo
-
-🚀 **Production URL**: [https://3338a47fearh.space.minimax.io](https://3338a47fearh.space.minimax.io)
-
 ## Tech Stack
 
 - **Frontend**: React 18 + TypeScript + Vite
