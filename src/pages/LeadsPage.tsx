@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { DashboardLayout } from '../components/DashboardLayout';
 import { leadsService } from '../services/leadsService';
 import { Lead } from '../lib/supabase';
-import { Plus, Edit2, Trash2, X, Save } from 'lucide-react';
+import { Plus, Edit2, Trash2, X, Save, Upload } from 'lucide-react';
+import { LeadsImportModal } from '../components/LeadsImportModal';
 
 export const LeadsPage: React.FC = () => {
   const [leads, setLeads] = useState<Lead[]>([]);
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
+  const [showImportModal, setShowImportModal] = useState(false);
   const [editingLead, setEditingLead] = useState<Lead | null>(null);
   const [formData, setFormData] = useState({
     name: '',
@@ -128,13 +130,22 @@ export const LeadsPage: React.FC = () => {
               Manage your contacts and prospects
             </p>
           </div>
-          <button
-            onClick={() => handleOpenModal()}
-            className="flex items-center space-x-2 px-6 py-3 bg-sky-400 text-white rounded-xl hover:bg-sky-500 transition-all duration-200 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-          >
-            <Plus className="w-5 h-5" />
-            <span>Add Lead</span>
-          </button>
+          <div className="flex items-center space-x-3">
+            <button
+              onClick={() => setShowImportModal(true)}
+              className="flex items-center space-x-2 px-4 py-3 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition-all duration-200 font-semibold shadow-lg hover:shadow-xl"
+            >
+              <Upload className="w-5 h-5" />
+              <span>Import Leads</span>
+            </button>
+            <button
+              onClick={() => handleOpenModal()}
+              className="flex items-center space-x-2 px-6 py-3 bg-sky-400 text-white rounded-xl hover:bg-sky-500 transition-all duration-200 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            >
+              <Plus className="w-5 h-5" />
+              <span>Add Lead</span>
+            </button>
+          </div>
         </div>
 
         {/* Leads Table */}
@@ -343,7 +354,7 @@ export const LeadsPage: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex space-x-3 pt-4">
+              <div className="flex space-x-3 pt-3 sticky bottom-0 bg-white">
                 <button
                   type="button"
                   onClick={handleCloseModal}
@@ -363,6 +374,13 @@ export const LeadsPage: React.FC = () => {
           </div>
         </div>
       )}
+
+      {/* Import Modal */}
+      <LeadsImportModal
+        isOpen={showImportModal}
+        onClose={() => setShowImportModal(false)}
+        onImportComplete={loadLeads}
+      />
     </DashboardLayout>
   );
 };
